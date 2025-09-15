@@ -68,9 +68,7 @@ afterEvaluate {
                 artifact(file("$buildDir/outputs/aar/${project.name}-release.aar")) {
                     builtBy 'bundleReleaseAar'
                 }
-                artifact(classesJar) {
-                    builtBy 'classesJar'
-                }
+                artifact(classesJar)
             }
         }
     }
