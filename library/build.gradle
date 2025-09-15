@@ -65,8 +65,12 @@ afterEvaluate {
                 artifactId = project.ext.artifact
                 version = project.ext.libraryVersion
 
-                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
-                artifact classesJar
+                artifact(file("$buildDir/outputs/aar/${project.name}-release.aar")) {
+                    builtBy 'bundleReleaseAar'
+                }
+                artifact(classesJar) {
+                    builtBy 'classesJar'
+                }
             }
         }
     }
