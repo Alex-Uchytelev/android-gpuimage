@@ -51,6 +51,10 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+task classesJar(type: Jar) {
+    from "$buildDir/intermediates/runtime_library_classes_jar/release/classes.jar"
+}
+
 afterEvaluate {
     publishing {
         publications {
@@ -60,6 +64,9 @@ afterEvaluate {
                 groupId = project.ext.publishedGroupId
                 artifactId = project.ext.artifact
                 version = project.ext.libraryVersion
+
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+                artifact classesJar
             }
         }
     }
