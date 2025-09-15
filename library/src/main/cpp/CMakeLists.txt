@@ -44,3 +44,5 @@ target_link_libraries( # Specifies the target library.
         ${log-lib}
         GLESv2
         jnigraphics)
+
+target_link_options(yuv-decoder PRIVATE "-Wl,-z,max-page-size=16384")

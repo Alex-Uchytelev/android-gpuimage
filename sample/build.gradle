@@ -2,9 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'jp.co.cyberagent.android.gpuimage.sample'
     compileSdkVersion COMPILE_SDK_VERSION as int
 
     defaultConfig {
+        applicationId "jp.co.cyberagent.android.gpuimage.sample"
+
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
 

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'jp.co.cyberagent.android.gpuimage'
     compileSdkVersion COMPILE_SDK_VERSION as int
 
     defaultConfig {
