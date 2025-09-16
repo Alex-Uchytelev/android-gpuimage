@@ -29,6 +29,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    publishing {
+        singleVariant('release') {
+            withJavadocJar()
+            withJavadocJar()
+        }
+    }
 }
 
 ext {
@@ -64,11 +71,6 @@ afterEvaluate {
                 groupId = project.ext.publishedGroupId
                 artifactId = project.ext.artifact
                 version = project.ext.libraryVersion
-
-                artifact(file("$buildDir/outputs/aar/${project.name}-release.aar")) {
-                    builtBy 'bundleReleaseAar'
-                }
-                artifact(classesJar)
             }
         }
     }
